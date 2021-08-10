@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webpack_loader',
-    'Recruiter.apps.RecruiterConfig',
+    'RecruiterApp.apps.RecruiterConfig',
     'AccountsApp'
 ]
 
@@ -52,9 +52,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AUTH_USER_MODEL="Recruiter.UserModel"
+AUTH_USER_MODEL="RecruiterApp.UserModel"
 
-ROOT_URLCONF = 'recruiter.urls'
+ROOT_URLCONF = 'Recruiter.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'recruiter.wsgi.application'
+WSGI_APPLICATION = 'Recruiter.wsgi.application'
 
 
 # Database
