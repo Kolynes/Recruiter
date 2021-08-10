@@ -30,7 +30,6 @@ ALLOWED_HOSTS = [
     "recruiter.kolyneschinedu.me"
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
