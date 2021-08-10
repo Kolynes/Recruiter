@@ -1,6 +1,5 @@
-from Recruiter.models.TestScoreModel import TestScoreModel
 from django.db.models import Q
-from Recruiter import models
+from RecruiterApp import models
 from utils.controller import Controller
 from utils.decorators import ensure_post, ensure_signed_in, ensure_staff
 from utils.shortcuts import json_response, paginate
@@ -29,11 +28,11 @@ class TestScoreController(Controller):
     @Controller.decorate(ensure_staff, ensure_post)
     def score_test(self, request):
         try:
-            test_score = TestScoreModel.objects.get(id=request.POST["testScoreId"])
+            test_score = models.TestScoreModel.objects.get(id=request.POST["testScoreId"])
             test_score.score = request.POST["score"]
             test_score.save()
             return json_response(200)
-        except TestScoreModel.DoesNotExist:
+        except models.TestScoreModel.DoesNotExist:
             return json_response(404, error={
                 "summary": "The test score was not found"
             })

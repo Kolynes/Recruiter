@@ -3,7 +3,7 @@ const BundleTracker = require("webpack-bundle-tracker");
 module.exports = {
     outputDir: './dist/',
     runtimeCompiler: true,
-    publicPath: process.env.NODE_ENV === 'production'? '/static/KolynesChineduApp/' : 'http://0.0.0.0:8080/',
+    publicPath: process.env.NODE_ENV === 'production'? '/static/RecruiterApp/' : 'http://0.0.0.0:8080/',
 
     css: {
         loaderOptions: {

@@ -1,8 +1,7 @@
 from utils.controller import Controller
 from utils.shortcuts import json_response, paginate
 from utils.decorators import ensure_post, ensure_signed_in, ensure_staff
-from Recruiter import models
-import datetime
+from RecruiterApp import models
 
 class TestController(Controller):
 

@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class RecruiterConfig(AppConfig):
-    name = 'Recruiter'
+class RecruiterAppConfig(AppConfig):
+    name = 'RecruiterApp'

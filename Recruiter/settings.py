@@ -25,7 +25,10 @@ SECRET_KEY = '$gcogg25y*#zeflgvk0l@1qwolu$qj26*2ha1+3l4duui7pvem'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "recruiter.kolyneschinedu.me"
+]
 
 
 # Application definition
@@ -38,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webpack_loader',
-    'RecruiterApp.apps.RecruiterConfig',
+    'RecruiterApp.apps.RecruiterAppConfig',
     'AccountsApp'
 ]
 

@@ -1,8 +1,7 @@
-from Recruiter.models.ApplicationModel import ApplicationModel
 from utils.controller import Controller
 from utils.decorators import ensure_post, ensure_staff
 from utils.shortcuts import json_response, paginate
-from Recruiter import models
+from RecruiterApp import models
 
 class JobsController(Controller):
 

@@ -1,7 +1,7 @@
 from utils.controller import Controller
 from utils.decorators import ensure_post, ensure_signed_in, ensure_staff
 from utils.shortcuts import json_response, paginate
-from Recruiter import models
+from RecruiterApp import models
 
 class ApplicationsController(Controller):
 

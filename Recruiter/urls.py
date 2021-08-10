@@ -20,5 +20,5 @@ from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("AccountsApp.controllers")),
-    path("", include("Recruiter.controllers")),
+    path("", include("RecruiterApp.controllers")),
 ]
