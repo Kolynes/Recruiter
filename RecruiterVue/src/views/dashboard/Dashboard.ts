@@ -58,5 +58,12 @@ export default class Dashboard extends Vue {
 
     mounted() {
         this.ping()
+        this.routes = [
+            { to: "/dashboard/home", name: "Home", icon: "mdi-home" },
+            { to: "/dashboard/applications", name: "Applications", icon: "mdi-mailbox" },
+            { to: "/dashboard/jobs", name: "Jobs", icon: "mdi-briefcase" },
+            { to: "/dashboard/profile", name: "Profile", icon: "mdi-account" },
+            { click: this.callSignOut, name: "Sign Out", icon: "mdi-power" },
+        ]
     }
 }
