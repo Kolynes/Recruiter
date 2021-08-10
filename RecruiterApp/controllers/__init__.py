@@ -18,6 +18,6 @@ urlpatterns = [
     path("experiences/", ExperiencesController()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
     re_path(r"^.*$", TemplateView.as_view(
-        template_name="Recruiter/%s.html" %("debug" if settings.DEBUG else "index")
+        template_name="RecruiterApp/%s.html" %("debug" if settings.DEBUG else "index")
     ))
 ]
