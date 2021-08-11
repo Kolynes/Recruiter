@@ -9,7 +9,7 @@
         hide-details
         dense
         prepend-inner-icon="mdi-magnify"
-        placeholder="Find a test"
+        placeholder="Find a Jobs"
         v-model="searchString"
         :loading="searching"
       />
