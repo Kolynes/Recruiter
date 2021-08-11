@@ -18,6 +18,9 @@ class AccountsController(Controller):
             data["numberOfAccounts"] = models.UserModel.objects.filter(is_staff=False).count()
         else:
             data["numberOfApplications"] = request.user.applications.count()
+            data["numberOfTests"] = 0
+            data["numberOfJobs"] = 0
+            data["numberOfAccounts"] = 0
 
         return json_response(200, data=data)
 

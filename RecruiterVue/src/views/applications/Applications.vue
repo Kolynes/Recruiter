@@ -117,9 +117,9 @@
                   :items="tests"
                   :item-value="(item) => item"
                   :item-text="(item) => item.name"
-                  v-if="!selectedApplication.test"
+                  v-if="!selectedApplication.test && isStaff"
                 />
-                <p class="body-1" v-else>{{ selectedApplication.test.name }}</p>
+                <p class="body-1" v-else-if="selectedApplication.test">{{ selectedApplication.test.name }}</p>
                 <p class="body-2" v-if="selectedApplication.testScore">
                   Test score: {{ selectedApplication.testScore.score || "" }}
                 </p>
@@ -129,7 +129,7 @@
                   rounded
                   type="submit"
                   :loading="settingTest"
-                  v-if="isStaff && !selectedApplication.test.id"
+                  v-if="isStaff && !selectedApplication.test"
                 >
                   set test
                 </v-btn>
@@ -138,7 +138,7 @@
                   small
                   rounded
                   @click="takeTest"
-                  v-else-if="!isStaff && !selectedApplication.testScore"
+                  v-else-if="!isStaff && !selectedApplication.testScore && selectedApplication.test"
                 >
                   take test
                 </v-btn>
@@ -147,11 +147,14 @@
                   small
                   rounded
                   @click="markTest"
-                  v-else-if="isStaff && !selectedApplication.testScore.score"
+                  v-else-if="isStaff && !selectedApplication.testScore"
                 >
                   mark Test
                 </v-btn>
-                <span v-else-if="!selectedApplication.testScore.score">
+                <span v-else-if="!selectedApplication.test">
+                  Yet to assign test...
+                </span>
+                <span v-else-if="!selectedApplication.testScore">
                   Yet to take test...
                 </span>
               </v-form>
@@ -186,7 +189,7 @@
                 :href="selectedApplication.interviewLink"
                 v-else
               >
-                {{ selectedApplication.interviewLink }}
+                {{ selectedApplication.interviewLink || "No link at the momemt" }}
               </v-btn>
             </v-tab-item>
           </v-tabs-items>

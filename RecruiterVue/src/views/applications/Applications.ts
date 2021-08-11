@@ -89,8 +89,9 @@ export default class Tests extends Vue {
         this.status = application.status;
         this.interviewLink = application.interviewLink;
         this.test = application.test
-        for(let qAndA in this.test.qAndA)
-            this.answers.push("")
+        if(this.test)
+            for(let qAndA in this.test.qAndA)
+                this.answers.push("")
         this.showApplicationDetailsDialog = true
     }
 

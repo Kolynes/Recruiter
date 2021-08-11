@@ -32,7 +32,7 @@ class ApplicationsController(Controller):
                 user__last_name__contains=query
             )
         else:
-            applications = models.ApplicationModel.objects.filter(job__name__contains=query, user=request.user)
+            applications = models.ApplicationModel.objects.filter(job__position__contains=query, user=request.user)
         applications_data, previous_page, next_page, number_of_pages = paginate(applications, page)
         return json_response(
             200, 
